@@ -28,6 +28,8 @@ function App() {
 
         <ListItem />
       </div>
+
+      <p className="footer-text">Developed by Oleg Gribanov</p>
     </div>
   );
 }

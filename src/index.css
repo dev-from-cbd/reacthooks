@@ -143,3 +143,12 @@ code {
 .jc-space-between {
   justify-content: space-between;
 }
+
+.footer-text {
+  color: #131a28;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  padding: 15px 25px;
+}
