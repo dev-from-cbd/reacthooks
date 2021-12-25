@@ -17,8 +17,129 @@ code {
   min-height: 100vh;
   flex-direction: column;
   text-align: center;
-  background-color: #1cdbf5;
+  background-color: lightblue;
   color: white;
   justify-content: flex-start;
   align-items: center;
+}
+
+.heading-text {
+  color: lightblue;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  margin: 4rem;
+  background-color: darkblue;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+}
+
+.task-container {
+  display: flex;
+
+  /* max-width: 70vh; */
+  width: 24.4rem;
+
+  height: 100%;
+  flex-direction: column;
+  text-align: center;
+  background-color: #131a28;
+  color: white;
+  border-radius: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px 20px;
+  margin: 0 auto 20px;
+  min-height: 205px;
+}
+
+.text-input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.text-input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.text-input:focus:-moz-placeholder {
+  color: transparent;
+}
+
+.text-input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.text-input {
+  outline: none;
+
+  border: lightblue 2px solid;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  padding: 10px 15px;
+  margin: 0 15px 15px 15px;
+  font-weight: bold;
+
+  width: 14rem;
+}
+
+.add-button {
+  background-color: lightblue;
+  outline: none;
+  /* border: darkblue 2px solid; */
+  border: none;
+  color: darkblue;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  padding: 14px 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 15px 15px 15px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: lightgray;
+
+  /* font-size: 1.22rem;
+  border: green 2.1px solid; */
+
+  color: black;
+}
+
+.no-item-text {
+  color: lightblue;
+  font-size: 1rem;
+  font-weight: bolder;
+  text-align: center;
+  margin: 4rem;
+}
+
+.list-item {
+  background-color: lightblue;
+  border: none;
+  border-radius: 8px;
+  width: 22rem;
+
+  font-size: 1.25rem;
+  padding: 10px 0.1rem;
+  margin: 15px 0;
+  color: black;
+  font-weight: bold;
+  text-align: start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.delete-icon {
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.jc-space-between {
+  justify-content: space-between;
 }
