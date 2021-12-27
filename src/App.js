@@ -14,7 +14,7 @@ function App() {
             className="text-input"
             placeholder="Write a task"
             value={taskInput}
-            onChange={updateTaskInput}
+            onChange={(event) => updateTaskInput(event.target.value)}
           />
           <button className="add-button" type="submit">
             Add
@@ -26,7 +26,9 @@ function App() {
         <ListItem />
       </div>
 
-      <p className="footer-text">Developed by Oleg Gribanov</p>
+      <p className="footer-text">
+        Developed by Oleg <a href="https://github.com/dev-from-cbd">Gribanov</a>
+      </p>
     </div>
   );
 }
