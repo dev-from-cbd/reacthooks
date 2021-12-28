@@ -27,7 +27,8 @@ function App() {
       </div>
 
       <p className="footer-text">
-        Developed by Oleg <a href="https://github.com/dev-from-cbd">Gribanov</a>
+        Developed by <a href="https://www.linkedin.com/in/neoguru/">Oleg</a>{" "}
+        <a href="https://github.com/dev-from-cbd">Gribanov</a>
       </p>
     </div>
   );
