@@ -3,6 +3,12 @@ import trashIcon from "./trash.svg";
 
 function App() {
   const [taskInput, updateTaskInput] = useState("");
+  const [toDoList, updateToDoList] = useState([]);
+
+  const addNote = () => {
+    toDoList.push({ description: taskInput });
+    updateToDoList(toDoList);
+  };
 
   return (
     <div className="app-background">
@@ -16,14 +22,15 @@ function App() {
             value={taskInput}
             onChange={(event) => updateTaskInput(event.target.value)}
           />
-          <button className="add-button" type="submit">
-            Add
+          <button className="add-button" type="submit" onClick={addNote}>
+            ADD
           </button>
         </div>
-
-        <p className="no-item-text">No tasks added.</p>
-
-        <ListItem />
+        {toDoList?.length ? (
+          <ListItem />
+        ) : (
+          <p className="no-item-text">No tasks added.</p>
+        )}
       </div>
 
       <p className="footer-text">
