@@ -8,6 +8,7 @@ function App() {
   const addNote = () => {
     toDoList.push({ description: taskInput });
     updateToDoList(toDoList);
+    updateTaskInput(taskInput);
   };
 
   return (
