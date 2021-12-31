@@ -8,7 +8,7 @@ function App() {
   const addNote = () => {
     toDoList.push({ description: taskInput });
     updateToDoList(toDoList);
-    updateTaskInput(taskInput);
+    updateTaskInput("");
   };
 
   return (
@@ -27,9 +27,7 @@ function App() {
             ADD
           </button>
         </div>
-        {toDoList?.length ? (
-          <ListItem />
-        ) : (
+        {toDoList?.length ? toDoList<ListItem /> : (
           <p className="no-item-text">No tasks added.</p>
         )}
       </div>
