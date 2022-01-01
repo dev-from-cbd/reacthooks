@@ -27,7 +27,9 @@ function App() {
             ADD
           </button>
         </div>
-        {toDoList?.length ? toDoList<ListItem /> : (
+        {toDoList?.length ? (
+          toDoList.map((toDoObject, index) => <ListItem />)
+        ) : (
           <p className="no-item-text">No tasks added.</p>
         )}
       </div>
