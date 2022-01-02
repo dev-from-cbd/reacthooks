@@ -133,6 +133,8 @@ code {
 .delete-icon {
   height: 1.5rem;
   cursor: pointer;
+
+  padding-right: 0.5rem;
 }
 
 .row {
@@ -151,4 +153,8 @@ code {
   text-align: center;
   margin: 1rem;
   padding: 1rem 1rem;
+}
+
+.list-item {
+  padding-left: 1rem;
 }

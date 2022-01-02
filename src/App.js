@@ -45,7 +45,7 @@ function App() {
 function ListItem(props) {
   return (
     <div className="list-item row jc-space-between">
-      <span>List Item</span>
+      <span clastName="list-item">List Item</span>
 
       <img className="delete-icon" src={trashIcon} />
     </div>
