@@ -11,6 +11,10 @@ function App() {
     updateTaskInput("");
   };
 
+  const deleteTask = (index) => {
+    toDoList.filter(item);
+  };
+
   return (
     <div className="app-background">
       <p className="heading-text">Planing Management App</p>
@@ -47,7 +51,7 @@ function App() {
 function ListItem(props) {
   return (
     <div className="list-item row jc-space-between">
-      <span clastName="list-item">List Item</span>
+      <span clastName="list-item">{props.itemData.description}</span>
 
       <img className="delete-icon" src={trashIcon} />
     </div>
