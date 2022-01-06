@@ -12,7 +12,7 @@ function App() {
   };
 
   const deleteTask = (index) => {
-    toDoList.filter(item);
+    toDoList.filter((item, i) => i != index);
   };
 
   return (
