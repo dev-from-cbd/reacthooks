@@ -34,7 +34,11 @@ function App() {
         </div>
         {toDoList?.length ? (
           toDoList.map((toDoObject, index) => (
-            <ListItem index={index} itemData={toDoObject} />
+            <ListItem
+              index={index}
+              itemData={toDoObject}
+              deleteTask={deleteTask}
+            />
           ))
         ) : (
           <p className="no-item-text">No tasks added.</p>
