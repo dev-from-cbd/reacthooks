@@ -58,7 +58,11 @@ function ListItem(props) {
     <div className="list-item row jc-space-between">
       <span clastName="list-item">{props.itemData.description}</span>
 
-      <img className="delete-icon" src={trashIcon} />
+      <img
+        className="delete-icon"
+        src={trashIcon}
+        onClick={() => props.deleteTask(props.index)}
+      />
     </div>
   );
 }
