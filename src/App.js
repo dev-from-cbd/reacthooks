@@ -12,8 +12,8 @@ function App() {
   };
 
   const deleteTask = (index) => {
-    const newList = toDoList.filter((item, i) => i != index);
-    updateToDoList("newList");
+    const newList = toDoList.filter((item, i) => i !== index);
+    updateToDoList(newList);
   };
 
   return (
