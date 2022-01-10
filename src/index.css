@@ -130,6 +130,11 @@ code {
   cursor: pointer;
 }
 
+.task-complete {
+  text-decoration: line-through;
+  color: white;
+}
+
 .delete-icon {
   height: 1.5rem;
   cursor: pointer;

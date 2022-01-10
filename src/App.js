@@ -6,7 +6,7 @@ function App() {
   const [toDoList, updateToDoList] = useState([]);
 
   const addNote = () => {
-    toDoList.push({ description: taskInput });
+    toDoList.push({ description: taskInput, isComplete: false });
     updateToDoList(toDoList);
     updateTaskInput("");
   };
@@ -14,6 +14,12 @@ function App() {
   const deleteTask = (index) => {
     const newList = toDoList.filter((item, i) => i !== index);
     updateToDoList(newList);
+  };
+
+  const markComplete = (index) => {
+    const list = [...toDoList];
+    list[index].isComplete = !list[index].isComplete;
+    updateToDoList(list);
   };
 
   return (
@@ -28,7 +34,7 @@ function App() {
             value={taskInput}
             onChange={(event) => updateTaskInput(event.target.value)}
           />
-          <button className="add-button" type="submit" onClick={addNote}>
+          <button className="add-button" onClick={addNote}>
             ADD
           </button>
         </div>
@@ -38,6 +44,7 @@ function App() {
               index={index}
               itemData={toDoObject}
               deleteTask={deleteTask}
+              markComplete={markComplete}
             />
           ))
         ) : (
@@ -56,7 +63,12 @@ function App() {
 function ListItem(props) {
   return (
     <div className="list-item row jc-space-between">
-      <span className="list-item">{props.itemData.description}</span>
+      <span
+        className={props.itemData.isComplete ? "task-complete" : ""}
+        onclick={() => props.markComplete(props.index)}
+      >
+        {props.itemData.description}
+      </span>
 
       <img
         className="delete-icon"
