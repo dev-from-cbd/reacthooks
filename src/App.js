@@ -32,6 +32,7 @@ function App() {
             className="text-input"
             placeholder="Write a task"
             value={taskInput}
+            onKeyDown={inputKeyDown}
             onChange={(event) => updateTaskInput(event.target.value)}
           />
           <button className="add-button" onClick={addNote}>
