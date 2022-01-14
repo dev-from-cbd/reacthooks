@@ -5,7 +5,9 @@ function App() {
   const [taskInput, updateTaskInput] = useState("");
   const [toDoList, updateToDoList] = useState([]);
 
-  const inputKeyDown = (event) => {};
+  const inputKeyDown = (event) => {
+    if()
+  };
 
   const addNote = () => {
     toDoList.push({ description: taskInput, isComplete: false });
