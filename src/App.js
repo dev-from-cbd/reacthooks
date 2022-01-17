@@ -6,7 +6,7 @@ function App() {
   const [toDoList, updateToDoList] = useState([]);
 
   const inputKeyDown = (event) => {
-    if(event.keyCode)
+    if(event.keyCode===13)
   };
 
   const addNote = () => {
