@@ -1,41 +1,50 @@
 import React, { useState } from "react";
-import trashIcon from "./trash.svg";
+import trash from "./trash.svg";
 
 function App() {
   const [taskInput, updateTaskInput] = useState("");
-  const [toDoList, updateToDoList] = useState([]);
+  const [toDoList, updateToDOList] = useState([]);
 
   const inputKeyDown = (event) => {
-    if (event.keyCode === 13)
-    addNote();
+    if (event.keyCode === 13) addNote();
+  };
+  const getTaskObject = (description, isComplete) => {
+    return {
+      description,
+      isComplete,
+    };
   };
 
   const addNote = () => {
-    toDoList.push({ description: taskInput, isComplete: false });
-    updateToDoList(toDoList);
+    if (!taskInput || !taskInput.length) return;
+    toDoList.push(getTaskObject(taskInput, false));
+    updateToDOList(toDoList);
     updateTaskInput("");
   };
 
   const deleteTask = (index) => {
-    const newList = toDoList.filter((item, i) => i !== index);
-    updateToDoList(newList);
+    let splice = toDoList.filter((item, i) => i !== index);
+    updateToDOList(splice);
   };
 
   const markComplete = (index) => {
     const list = [...toDoList];
     list[index].isComplete = !list[index].isComplete;
-    updateToDoList(list);
+    updateToDOList(list);
   };
 
   return (
     <div className="app-background">
-      <p className="heading-text">Planing Management App</p>
-
-      <div className="task-container">
-        <div>
+      <p className="heading-text">
+        React To Do List{" "}
+        <span role="img" aria-label="react">
+          🔥
+        </span>
+      </p>
+      <div className="task-container column">
+        <div className="row">
           <input
             className="text-input"
-            placeholder="Write a task"
             value={taskInput}
             onKeyDown={inputKeyDown}
             onChange={(event) => updateTaskInput(event.target.value)}
@@ -47,14 +56,20 @@ function App() {
         {toDoList?.length ? (
           toDoList.map((toDoObject, index) => (
             <ListItem
-              index={index}
+              key={index}
               itemData={toDoObject}
-              deleteTask={deleteTask}
               markComplete={markComplete}
+              index={index}
+              deleteTask={deleteTask}
             />
           ))
         ) : (
-          <p className="no-item-text">No tasks added.</p>
+          <p className="no-item-text">
+            <span role="img" aria-label="react">
+              📌
+            </span>{" "}
+            &nbsp;No Task Added !
+          </p>
         )}
       </div>
 
@@ -71,14 +86,15 @@ function ListItem(props) {
     <div className="list-item row jc-space-between">
       <span
         className={props.itemData.isComplete ? "task-complete" : ""}
-        onclick={() => props.markComplete(props.index)}
+        onClick={() => props.markComplete(props.index)}
       >
-        {props.itemData.description}
+        {props.itemData.isComplete ? `✅ ` : ""}&nbsp;
+        {props.itemData?.description}
       </span>
-
       <img
         className="delete-icon"
-        src={trashIcon}
+        src={trash}
+        alt="delete-task"
         onClick={() => props.deleteTask(props.index)}
       />
     </div>
